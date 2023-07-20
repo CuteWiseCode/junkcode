@@ -1,0 +1,212 @@
+package com.me.plugin.templates.modity;
+
+import static org.objectweb.asm.Opcodes.*;
+
+import org.objectweb.asm.Label;
+import org.objectweb.asm.MethodVisitor;
+import org.objectweb.asm.Opcodes;
+
+public class Template4 {
+
+    public static void  modifyFromCode(MethodVisitor methodVisitor,int index){
+        Label label0 = new Label();
+        methodVisitor.visitLabel(label0);
+        methodVisitor.visitLineNumber(180, label0);
+        methodVisitor.visitMethodInsn(INVOKESTATIC, "java/lang/System", "nanoTime", "()J", false);
+        methodVisitor.visitMethodInsn(INVOKESTATIC, "java/util/Calendar", "getInstance", "()Ljava/util/Calendar;", false);
+        methodVisitor.visitMethodInsn(INVOKESTATIC, "java/lang/System", "identityHashCode", "(Ljava/lang/Object;)I", false);
+        methodVisitor.visitInsn(I2L);
+        methodVisitor.visitInsn(LAND);
+        methodVisitor.visitInsn(LCONST_0);
+        methodVisitor.visitInsn(LCMP);
+        Label label1 = new Label();
+        methodVisitor.visitJumpInsn(IFNE, label1);
+        methodVisitor.visitInsn(ICONST_1);
+        Label label2 = new Label();
+        methodVisitor.visitJumpInsn(GOTO, label2);
+        methodVisitor.visitLabel(label1);
+        methodVisitor.visitFrame(Opcodes.F_NEW, 0, new Object[] {}, 0, new Object[] {});
+        methodVisitor.visitInsn(ICONST_0);
+        methodVisitor.visitLabel(label2);
+        methodVisitor.visitFrame(Opcodes.F_NEW, 0, new Object[] {}, 1, new Object[] {Opcodes.INTEGER});
+        int v0 = ++index;
+        methodVisitor.visitVarInsn(ISTORE, v0);
+        Label label3 = new Label();
+        methodVisitor.visitLabel(label3);
+        methodVisitor.visitLineNumber(181, label3);
+        methodVisitor.visitVarInsn(ILOAD, v0);
+        Label label4 = new Label();
+        methodVisitor.visitJumpInsn(IFEQ, label4);
+        Label label5 = new Label();
+        methodVisitor.visitLabel(label5);
+        methodVisitor.visitLineNumber(182, label5);
+        methodVisitor.visitLdcInsn("abc@defg#h$ijklm,nop^qr%stu!vwx*yz");
+
+        int v1 = ++index;
+        methodVisitor.visitVarInsn(ASTORE, v1);
+        Label label6 = new Label();
+        methodVisitor.visitLabel(label6);
+        methodVisitor.visitLineNumber(183, label6);
+        methodVisitor.visitLdcInsn("ijklm,nop^qr%stu!vwx*yz");
+
+        int v2 = ++index;
+        methodVisitor.visitVarInsn(ASTORE, v2);
+        Label label7 = new Label();
+        methodVisitor.visitLabel(label7);
+        methodVisitor.visitLineNumber(184, label7);
+        methodVisitor.visitTypeInsn(NEW, "java/util/Random");
+        methodVisitor.visitInsn(DUP);
+        methodVisitor.visitMethodInsn(INVOKESPECIAL, "java/util/Random", "<init>", "()V", false);
+        methodVisitor.visitMethodInsn(INVOKEVIRTUAL, "java/util/Random", "nextInt", "()I", false);
+
+        int v3 = ++index;
+        methodVisitor.visitVarInsn(ISTORE, v3);
+        Label label8 = new Label();
+        methodVisitor.visitLabel(label8);
+        methodVisitor.visitLineNumber(185, label8);
+        methodVisitor.visitVarInsn(ALOAD, v1);
+        methodVisitor.visitMethodInsn(INVOKEVIRTUAL, "java/lang/String", "length", "()I", false);
+
+        int v4 = ++index;
+        methodVisitor.visitVarInsn(ISTORE, v4);
+        Label label9 = new Label();
+        methodVisitor.visitLabel(label9);
+        methodVisitor.visitLineNumber(186, label9);
+        methodVisitor.visitVarInsn(ALOAD, v2);
+        methodVisitor.visitMethodInsn(INVOKEVIRTUAL, "java/lang/String", "length", "()I", false);
+
+        int v5 = ++index;
+        methodVisitor.visitVarInsn(ISTORE, v5);
+        Label label10 = new Label();
+        methodVisitor.visitLabel(label10);
+        methodVisitor.visitLineNumber(188, label10);
+        methodVisitor.visitVarInsn(ALOAD, v2);
+        methodVisitor.visitInsn(ICONST_0);
+        methodVisitor.visitMethodInsn(INVOKEVIRTUAL, "java/lang/String", "charAt", "(I)C", false);
+
+        int v6 = ++index;
+        methodVisitor.visitVarInsn(ISTORE, v6);
+        Label label11 = new Label();
+        methodVisitor.visitLabel(label11);
+        methodVisitor.visitLineNumber(189, label11);
+        methodVisitor.visitVarInsn(ILOAD, v4);
+        methodVisitor.visitVarInsn(ILOAD, v5);
+        methodVisitor.visitInsn(ISUB);
+
+        int v7 = ++index;
+        methodVisitor.visitVarInsn(ISTORE, v7);
+        Label label12 = new Label();
+        methodVisitor.visitLabel(label12);
+        methodVisitor.visitLineNumber(191, label12);
+        methodVisitor.visitVarInsn(ILOAD, v3);
+
+        int v8 = ++index;
+        methodVisitor.visitVarInsn(ISTORE, v8);
+        Label label13 = new Label();
+        methodVisitor.visitLabel(label13);
+        methodVisitor.visitFrame(Opcodes.F_NEW, 9, new Object[] {Opcodes.INTEGER, "java/lang/String", "java/lang/String", Opcodes.INTEGER, Opcodes.INTEGER, Opcodes.INTEGER, Opcodes.INTEGER, Opcodes.INTEGER, Opcodes.INTEGER}, 0, new Object[] {});
+        methodVisitor.visitVarInsn(ILOAD, v8);
+        methodVisitor.visitVarInsn(ILOAD, v7);
+        methodVisitor.visitJumpInsn(IF_ICMPGT, label4);
+        Label label14 = new Label();
+        methodVisitor.visitLabel(label14);
+        methodVisitor.visitLineNumber(192, label14);
+        methodVisitor.visitVarInsn(ALOAD, v1);
+        methodVisitor.visitVarInsn(ILOAD, v8);
+        methodVisitor.visitMethodInsn(INVOKEVIRTUAL, "java/lang/String", "charAt", "(I)C", false);
+        methodVisitor.visitVarInsn(ILOAD, v6);
+        Label label15 = new Label();
+        methodVisitor.visitJumpInsn(IF_ICMPEQ, label15);
+        Label label16 = new Label();
+        methodVisitor.visitLabel(label16);
+        methodVisitor.visitLineNumber(193, label16);
+        methodVisitor.visitFrame(Opcodes.F_NEW, 9, new Object[] {Opcodes.INTEGER, "java/lang/String", "java/lang/String", Opcodes.INTEGER, Opcodes.INTEGER, Opcodes.INTEGER, Opcodes.INTEGER, Opcodes.INTEGER, Opcodes.INTEGER}, 0, new Object[] {});
+        methodVisitor.visitIincInsn(v8, 1);
+        methodVisitor.visitVarInsn(ILOAD, v8);
+        methodVisitor.visitVarInsn(ILOAD, v7);
+        methodVisitor.visitJumpInsn(IF_ICMPGT, label15);
+        methodVisitor.visitVarInsn(ALOAD, v1);
+        methodVisitor.visitVarInsn(ILOAD, v8);
+        methodVisitor.visitMethodInsn(INVOKEVIRTUAL, "java/lang/String", "charAt", "(I)C", false);
+        methodVisitor.visitVarInsn(ILOAD, v6);
+        methodVisitor.visitJumpInsn(IF_ICMPEQ, label15);
+        methodVisitor.visitJumpInsn(GOTO, label16);
+        methodVisitor.visitLabel(label15);
+        methodVisitor.visitLineNumber(195, label15);
+        methodVisitor.visitFrame(Opcodes.F_NEW, 9, new Object[] {Opcodes.INTEGER, "java/lang/String", "java/lang/String", Opcodes.INTEGER, Opcodes.INTEGER, Opcodes.INTEGER, Opcodes.INTEGER, Opcodes.INTEGER, Opcodes.INTEGER}, 0, new Object[] {});
+        methodVisitor.visitVarInsn(ILOAD, v8);
+        methodVisitor.visitVarInsn(ILOAD, v7);
+        Label label17 = new Label();
+        methodVisitor.visitJumpInsn(IF_ICMPGT, label17);
+        Label label18 = new Label();
+        methodVisitor.visitLabel(label18);
+        methodVisitor.visitLineNumber(196, label18);
+        methodVisitor.visitVarInsn(ILOAD, v8);
+        methodVisitor.visitInsn(ICONST_1);
+        methodVisitor.visitInsn(IADD);
+
+        int v9 = ++index;
+        methodVisitor.visitVarInsn(ISTORE, v9);
+        Label label19 = new Label();
+        methodVisitor.visitLabel(label19);
+        methodVisitor.visitLineNumber(197, label19);
+        methodVisitor.visitVarInsn(ILOAD, v9);
+        methodVisitor.visitVarInsn(ILOAD, v5);
+        methodVisitor.visitInsn(IADD);
+        methodVisitor.visitInsn(ICONST_1);
+        methodVisitor.visitInsn(ISUB);
+
+        int v10 = ++index;
+        methodVisitor.visitVarInsn(ISTORE, v10);
+        Label label20 = new Label();
+        methodVisitor.visitLabel(label20);
+        methodVisitor.visitLineNumber(198, label20);
+        methodVisitor.visitInsn(ICONST_1);
+
+        int v11 = ++index;
+        methodVisitor.visitVarInsn(ISTORE, v11);
+        Label label21 = new Label();
+        methodVisitor.visitLabel(label21);
+        methodVisitor.visitFrame(Opcodes.F_NEW, 12, new Object[] {Opcodes.INTEGER, "java/lang/String", "java/lang/String", Opcodes.INTEGER, Opcodes.INTEGER, Opcodes.INTEGER, Opcodes.INTEGER, Opcodes.INTEGER, Opcodes.INTEGER, Opcodes.INTEGER, Opcodes.INTEGER, Opcodes.INTEGER}, 0, new Object[] {});
+        methodVisitor.visitVarInsn(ILOAD, v9);
+        methodVisitor.visitVarInsn(ILOAD, v10);
+        methodVisitor.visitJumpInsn(IF_ICMPGE, label17);
+        methodVisitor.visitVarInsn(ALOAD, v1);
+        methodVisitor.visitVarInsn(ILOAD, v9);
+        methodVisitor.visitMethodInsn(INVOKEVIRTUAL, "java/lang/String", "charAt", "(I)C", false);
+        methodVisitor.visitVarInsn(ALOAD, v2);
+        methodVisitor.visitVarInsn(ILOAD, v11);
+        Label label22 = new Label();
+        methodVisitor.visitLabel(label22);
+        methodVisitor.visitLineNumber(199, label22);
+        methodVisitor.visitMethodInsn(INVOKEVIRTUAL, "java/lang/String", "charAt", "(I)C", false);
+        methodVisitor.visitJumpInsn(IF_ICMPNE, label17);
+        Label label23 = new Label();
+        methodVisitor.visitLabel(label23);
+        methodVisitor.visitLineNumber(200, label23);
+        methodVisitor.visitVarInsn(ILOAD, v9);
+        methodVisitor.visitVarInsn(ILOAD, v11);
+        Label label24 = new Label();
+        methodVisitor.visitJumpInsn(IF_ICMPNE, label24);
+        Label label25 = new Label();
+        methodVisitor.visitLabel(label25);
+        methodVisitor.visitLineNumber(201, label25);
+        methodVisitor.visitFieldInsn(GETSTATIC, "java/lang/System", "out", "Ljava/io/PrintStream;");
+        methodVisitor.visitMethodInsn(INVOKEVIRTUAL, "java/io/PrintStream", "println", "()V", false);
+        methodVisitor.visitLabel(label24);
+        methodVisitor.visitLineNumber(199, label24);
+        methodVisitor.visitFrame(Opcodes.F_NEW, 12, new Object[] {Opcodes.INTEGER, "java/lang/String", "java/lang/String", Opcodes.INTEGER, Opcodes.INTEGER, Opcodes.INTEGER, Opcodes.INTEGER, Opcodes.INTEGER, Opcodes.INTEGER, Opcodes.INTEGER, Opcodes.INTEGER, Opcodes.INTEGER}, 0, new Object[] {});
+        methodVisitor.visitIincInsn(v9, 1);
+        methodVisitor.visitIincInsn(v11, 1);
+        methodVisitor.visitJumpInsn(GOTO, label21);
+        methodVisitor.visitLabel(label17);
+        methodVisitor.visitLineNumber(191, label17);
+        methodVisitor.visitFrame(Opcodes.F_NEW, 9, new Object[] {Opcodes.INTEGER, "java/lang/String", "java/lang/String", Opcodes.INTEGER, Opcodes.INTEGER, Opcodes.INTEGER, Opcodes.INTEGER, Opcodes.INTEGER, Opcodes.INTEGER}, 0, new Object[] {});
+        methodVisitor.visitIincInsn(v8, 1);
+        methodVisitor.visitJumpInsn(GOTO, label13);
+        methodVisitor.visitLabel(label4);
+        methodVisitor.visitLineNumber(208, label4);
+        methodVisitor.visitFrame(Opcodes.F_NEW, 1, new Object[] {Opcodes.INTEGER}, 0, new Object[] {});
+
+    }
+}
